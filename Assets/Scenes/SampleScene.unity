@@ -955,9 +955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24b99213a6c74f869a3013e80eb0bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 4.5
+  maxTime: 3.5
   pipe: {fileID: 7700120144725611665, guid: d629e8a7d25ab467f9f7c1997af28889, type: 3}
-  height: 1
+  height: 1.3
 --- !u!4 &1002764959
 Transform:
   m_ObjectHideFlags: 0

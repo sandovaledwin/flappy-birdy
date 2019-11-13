@@ -13,6 +13,7 @@ public class flylittlebird : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gameManager.start();
+        SoundManager.PlayScoreSound();
     }
 
     // Update is called once per frame
@@ -21,12 +22,13 @@ public class flylittlebird : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up * velocity;
-            SoundManager.PlaySound();
+            SoundManager.PlayFlyingSound();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         gameManager.gameOver();
+        SoundManager.PlayGameOverSound();
     }
 }

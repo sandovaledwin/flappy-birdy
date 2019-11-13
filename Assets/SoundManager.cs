@@ -5,11 +5,15 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip birdFlying;
+    public static AudioClip birdGameOver;
+    public static AudioClip birdScore;    
     private static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
     {
-        birdFlying = Resources.Load<AudioClip>("Sounds/BirdJump.wav");
+        birdFlying = Resources.Load<AudioClip>("BirdJump");
+        birdGameOver = Resources.Load<AudioClip>("Lose");
+        birdScore = Resources.Load<AudioClip>("Score");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -20,8 +24,18 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public static void PlaySound()
+    public static void PlayFlyingSound()
     {
         audioSrc.PlayOneShot(birdFlying);
+    }
+
+    public static void PlayGameOverSound()
+    {
+        audioSrc.PlayOneShot(birdGameOver);
+    }
+
+    public static void PlayScoreSound()
+    {
+        audioSrc.PlayOneShot(birdScore);
     }
 }
